@@ -10,10 +10,11 @@
   --color-secondary: #FA5424;
   --color-bgPrimary: #FAF4EC;
   --color-bgSecondary: #EAE4D8;
+  --color-pink: #FCB8FA;
 }
 
 /* BASIC STYLES */
 body {
-  @apply bg-bgPrimary font-sans
+  @apply bg-bgSecondary font-sans
 }
 
