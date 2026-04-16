@@ -1,0 +1,26 @@
+import React from "react";
+import '../UI/button.css';
+
+const Button = ({ href, children, icon, iconAlt = "", className = "" }) => {
+  return (
+    <a href={href} className={`btn cursor-pointer ${className}`}>
+      <div className="btnWrapper">
+        <span className="btnBg" />
+
+        <span className="btnText">{children}</span>
+
+        <span className="btnIcon">
+          {icon && (
+            <img
+              src={icon}
+              alt={iconAlt}
+              className="btnIconImg h-[17.70px]!"
+            />
+          )}
+        </span>
+      </div>
+    </a>
+  );
+};
+
+export default Button;
