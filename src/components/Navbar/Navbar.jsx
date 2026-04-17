@@ -33,7 +33,7 @@ const Navbar = () => {
       </a>
 
       {/* DESKTOP MENU */}
-      <div className="hidden md:flex items-center gap-1 bg-white/60 p-2 rounded-[1em]">
+      <div className="hidden lg:flex items-center gap-1 bg-white/60 px-2 py-1.5 rounded-[12.8px]">
         {navLinks.map((link, index) => (
           <NavLink key={index} href={link.href}>
             {link.name}
@@ -42,19 +42,19 @@ const Navbar = () => {
       </div>
 
       {/* CTA BUTTON (DESKTOP) */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <Button
-        className="bg-pink"
+          className="bg-pink"
           icon={Fire}
           iconAlt="fire icon">
-            Get Results
+          Get Results
         </Button>
       </div>
 
       {/* HAMBURGER (MOBILE) */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden bg-purple-300 p-3 rounded-lg"
+        className="lg:hidden bg-purple-300 p-3 rounded-lg"
       >
         <div className="w-5 h-0.5 bg-black mb-1"></div>
         <div className="w-5 h-0.5 bg-black"></div>
