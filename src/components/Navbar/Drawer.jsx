@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Button from "../UI/Button";
 import Plane from "../../assets/plane-icon.png";
@@ -8,29 +8,29 @@ import TextareaField from "../UI/TextareaField";
 const Drawer = ({ isOpen, onClose }) => {
   const modalRef = useRef(null);
   const panelRef = useRef(null);
-  const [touched, setTouched] = useState({});
+  // const [touched, setTouched] = useState({});
 
   // ADD THIS at top (inside Drawer component)
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+  // const [form, setForm] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   message: "",
+  // });
 
-  const validate = {
-    name: (val) => val.trim().length > 2,
-    email: (val) => /\S+@\S+\.\S+/.test(val),
-    message: (val) => val.trim().length > 5,
-  };
+  // const validate = {
+  //   name: (val) => val.trim().length > 2,
+  //   email: (val) => /\S+@\S+\.\S+/.test(val),
+  //   message: (val) => val.trim().length > 5,
+  // };
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (e) => {
+  //   setForm({ ...form, [e.target.name]: e.target.value });
+  // };
 
-  const handleBlur = (e) => {
-    setTouched({ ...touched, [e.target.name]: true });
-  };
+  // const handleBlur = (e) => {
+  //   setTouched({ ...touched, [e.target.name]: true });
+  // };
 
   // ICONS
   const SuccessIcon = () => (
