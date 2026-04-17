@@ -18,3 +18,12 @@ body {
   @apply bg-bgSecondary font-sans
 }
 
+/* Chrome, Safari */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}

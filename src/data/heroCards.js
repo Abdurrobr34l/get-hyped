@@ -1,0 +1,48 @@
+const heroCards = [
+  {
+    id: 1,
+    type: "stat",
+    theme: "blue",
+    stat: "10M+",
+    subtitle: "Organische views",
+    description: "Groei door slimme content",
+    image: null,
+    video: null,
+    hideOn: "",
+  },
+  {
+    id: 2,
+    type: "video",
+    theme: null,
+    stat: null,
+    subtitle: null,
+    description: null,
+    image: "https://cdn.prod.website-files.com/6848603da8e6ac95794b7498/69c40296636e683096701cda_video-thumb-01.avif",
+    video: "https://gethyped.b-cdn.net/Salontopper/Loop%20Salontopper.mp4",
+    hideOn: "",
+  },
+  {
+    id: 3,
+    type: "stat",
+    theme: "green",
+    stat: "30+",
+    subtitle: "Merken geholpen",
+    description: "Van start-up tot multinational",
+    image: null,
+    video: null,
+    hideOn: "mobile",
+  },
+  {
+    id: 4,
+    type: "video",
+    theme: null,
+    stat: null,
+    subtitle: null,
+    description: null,
+    image: "https://cdn.prod.website-files.com/6848603da8e6ac95794b7498/69c402fa5b2a05b98200d317_video-thumb-02.avif",
+    video: "https://gethyped.b-cdn.net/Petrol%20Head/petrolhead-loop.mp4",
+    hideOn: "tablet-mobile",
+  },
+];
+
+export default heroCards;

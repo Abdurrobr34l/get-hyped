@@ -3,6 +3,7 @@ import NavLink from "../UI/NavLink";
 import Button from "../UI/Button";
 import Fire from "../../assets/fire-icon.png";
 import Logo from "../../assets/logo.png";
+import Drawer from "./Drawer";
 
 const navLinks = [
   { name: "Expertises", href: "#" },
@@ -13,6 +14,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
     <nav className="flex items-center justify-between py-4">
@@ -44,12 +46,17 @@ const Navbar = () => {
       {/* CTA BUTTON (DESKTOP) */}
       <div className="hidden lg:block">
         <Button
+          onClick={() => setIsDrawerOpen(true)}
           className="bg-pink"
           icon={Fire}
           iconAlt="fire icon">
           Get Results
         </Button>
       </div>
+      <Drawer
+  isOpen={isDrawerOpen}
+  onClose={() => setIsDrawerOpen(false)}
+/>
 
       {/* HAMBURGER (MOBILE) */}
       <button
@@ -69,8 +76,8 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          <Button className="flex items-center gap-2 bg-purple-300 px-5 py-2 rounded-full">
-            Get Results
+          <Button className="flex items-center gap-2 bg-purple-300 px-5 py-2 text-[6.2px] rounded-full" textStyle={"text-[6.2px]"}>
+            Get Resultsss
             <img src={Fire} alt="fire" className="w-4 h-4" />
           </Button>
         </div>
