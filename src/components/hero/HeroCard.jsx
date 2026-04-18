@@ -27,23 +27,23 @@ const HeroCard = ({ card, cardRef }) => {
         will-change-transform
       `}
       style={{
-        width: "clamp(140px, 38vw, 320px)",
+        width: "clamp(140px, 30vw, 340px)",
         aspectRatio: "4.8 / 6.2",
-        marginLeft: card.id === 1 ? "0" : "clamp(-20px, -5vw, -60px)",
+        marginLeft: card.id === 1 ? "0" : "clamp(-20px, -6vw, -70px)",
         zIndex: card.id,
       }}
     >
       {card.type === "stat" ? (
         <div className="flex flex-col justify-between h-full p-4 md:p-6 lg:p-8">
-          <p className="text-[clamp(2rem,8vw,4rem)] font-black text-primary leading-none">
+          <p className="text-[clamp(2rem,6vw,4rem)] font-black text-primary leading-none">
             {card.stat}
           </p>
           <div className="flex flex-col gap-1">
-            <p className="text-[clamp(0.75rem,2.5vw,1.1rem)] font-bold text-primary">
+            <p className="text-[clamp(0.75rem,2vw,1.1rem)] font-bold text-primary">
               {card.subtitle}
             </p>
             <div className="w-full h-px bg-primary/30 my-1" />
-            <p className="text-[clamp(0.65rem,2vw,0.9rem)] text-primary/70">
+            <p className="text-[clamp(0.65rem,1.5vw,0.9rem)] text-primary/70">
               {card.description}
             </p>
           </div>

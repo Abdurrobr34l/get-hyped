@@ -15,7 +15,7 @@
 
 /* BASIC STYLES */
 body {
-  @apply bg-bgSecondary font-sans
+  @apply bg-bgPrimary font-sans
 }
 
 /* Chrome, Safari */
@@ -26,4 +26,10 @@ body {
 /* Firefox */
 html {
   scrollbar-width: none;
+}
+
+/* Text selection style */
+::selection {
+  background: #000;   /* black */
+  color: #fff;        /* white */
 }
