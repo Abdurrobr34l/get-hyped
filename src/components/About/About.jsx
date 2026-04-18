@@ -99,7 +99,7 @@ const About = () => {
 ">
             <div className="
               flex flex-col gap-12
-              transition-all duration-500
+              transition-all duration-1000
               -translate-y-8
               ease-[cubic-bezier(0.34,1.56,0.64,1)]
               group-hover:translate-y-8
