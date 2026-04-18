@@ -1,36 +1,13 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Button from "../UI/Button";
-import Plane from "../../assets/plane-icon.png";
+import Plane from "../../assets/icons/plane-icon.png";
 import InputField from "../UI/InputField";
 import TextareaField from "../UI/TextareaField";
 
 const Drawer = ({ isOpen, onClose }) => {
   const modalRef = useRef(null);
   const panelRef = useRef(null);
-  // const [touched, setTouched] = useState({});
-
-  // ADD THIS at top (inside Drawer component)
-  // const [form, setForm] = useState({
-  //   name: "",
-  //   email: "",
-  //   phone: "",
-  //   message: "",
-  // });
-
-  // const validate = {
-  //   name: (val) => val.trim().length > 2,
-  //   email: (val) => /\S+@\S+\.\S+/.test(val),
-  //   message: (val) => val.trim().length > 5,
-  // };
-
-  // const handleChange = (e) => {
-  //   setForm({ ...form, [e.target.name]: e.target.value });
-  // };
-
-  // const handleBlur = (e) => {
-  //   setTouched({ ...touched, [e.target.name]: true });
-  // };
 
   // ICONS
   const SuccessIcon = () => (
@@ -141,36 +118,39 @@ const Drawer = ({ isOpen, onClose }) => {
           />
 
           {/* TEXTAREA (manual version) */}
-       <TextareaField
-  label="Bericht *"
-  placeholder="Vertel ons wat je zoekt (of gewoon iets leuks)."
-  required
-  validator={(v) => v.length > 5}
-/>
+          <TextareaField
+            label="Bericht *"
+            placeholder="Vertel ons wat je zoekt (of gewoon iets leuks)."
+            required
+            validator={(v) => v.length > 5}
+          />
 
-  {/* CHECKBOX */}
-  <div className="flex items-center gap-3">
-    <input type="checkbox" id="privacy" className="w-4 h-4" />
-    <label htmlFor="privacy" className="text-sm">
-      Ik accepteer de{" "}
-      <span className="underline">Privacyvoorwaarden</span> *
-    </label>
-  </div>
+          {/* CHECKBOX */}
+          <div className="flex items-center gap-3">
+            <input type="checkbox" id="privacy" className="w-4 h-4" />
+            <label htmlFor="privacy" className="text-sm">
+              Ik accepteer de{" "}
+              <span className="underline">Privacyvoorwaarden</span> *
+            </label>
+          </div>
 
-  {/* SUBMIT */}
-  <div className="flex flex-wrap items-center gap-4">
-    <Button
-      children={"Verstuur bericht"}
-      icon={Plane}
-      className="bg-secondary text-white!"
-    />
-    <span className="text-sm font-bold text-[19.2px]">
-      Of bel{" "}
-      <a href="tel:+31615337496" className="text-secondary">
-        +31 6 1533 7496
-      </a>
-    </span>
-  </div>
+          {/* SUBMIT */}
+          <div className="flex flex-wrap items-center gap-4">
+            <Button
+              children={"Verstuur bericht"}
+              icon={Plane}
+              iconAlt="Plane icon"
+              iconStyle="bg-white"
+              className="bg-secondary text-white!"
+            />
+
+            <span className="text-sm font-bold text-[19.2px]">
+              Of bel{" "}
+              <a href="tel:+31615337496" className="text-secondary">
+                +31 6 1533 7496
+              </a>
+            </span>
+          </div>
 
         </form>
       </div>

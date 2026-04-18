@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavLink from "../UI/NavLink";
 import Button from "../UI/Button";
-import Fire from "../../assets/fire-icon.png";
+import Fire from "../../assets/icons/fire-icon.png";
 import Logo from "../../assets/logo.png";
 import Drawer from "./Drawer";
 
@@ -49,7 +49,9 @@ const Navbar = () => {
           onClick={() => setIsDrawerOpen(true)}
           className="bg-pink"
           icon={Fire}
-          iconAlt="fire icon">
+          iconAlt="fire icon"
+          iconStyle="bg-white"
+          >
           Get Results
         </Button>
       </div>
@@ -76,10 +78,14 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          <Button className="flex items-center gap-2 bg-purple-300 px-5 py-2 text-[6.2px] rounded-full" textStyle={"text-[6.2px]"}>
-            Get Resultsss
-            <img src={Fire} alt="fire" className="w-4 h-4" />
-          </Button>
+          <Button 
+          className="flex items-center gap-2 bg-purple-300 px-5 py-2 text-[6.2px] rounded-full" 
+          textStyle={"text-[6.2px]"}
+          children={"Get Resultsss"}
+          icon={Fire}
+          iconAlt="Fire icon"
+          iconStyle="bg-white"
+          />
         </div>
       )}
     </nav>

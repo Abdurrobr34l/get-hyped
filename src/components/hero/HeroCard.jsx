@@ -27,7 +27,7 @@ const HeroCard = ({ card, cardRef }) => {
         will-change-transform
       `}
       style={{
-        width: "clamp(140px, 30vw, 340px)",
+        width: "clamp(160px, 30vw, 340px)",
         aspectRatio: "4.8 / 6.2",
         marginLeft: card.id === 1 ? "0" : "clamp(-20px, -6vw, -70px)",
         zIndex: card.id,
