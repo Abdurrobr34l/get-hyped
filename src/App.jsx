@@ -12,7 +12,7 @@ const App = () => {
         <Navbar />
       </Layout>
 
-      <Hero />
+      {/* <Hero /> */}
 
       <Layout>
         <About />

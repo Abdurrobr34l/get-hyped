@@ -49,11 +49,13 @@ const Expertises = () => {
       className="relative"
     >
       {expertises.map((item, index) => (
-        <ExpertiseCard
-          key={item.id}
-          item={item}
-          cardRef={(el) => (cardRefs.current[index] = el)}
-        />
+        <a href="#">
+          <ExpertiseCard
+            key={item.id}
+            item={item}
+            cardRef={(el) => (cardRefs.current[index] = el)}
+          />
+        </a>
       ))}
     </section>
   );

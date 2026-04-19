@@ -33,3 +33,11 @@ html {
   background: #000;   /* black */
   color: #fff;        /* white */
 }
+
+.experties-wrapper {
+  @apply md:max-h-12.5! md:min-h-[55vh] lg:max-h-17.5! xl:min-h-[75vh]! 2xl:min-h-[80vh]!
+}
+
+.btnWrapper {
+  @apply xl:py-[0.3em]
+}
