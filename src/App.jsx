@@ -18,6 +18,11 @@ const App = () => {
         <About />
         <Expertises/>
 
+        <h2 className='mb-40'>lorem</h2>
+        <h2 className='mt-40'>lorem</h2>
+        <h2 className='mt-40'>lorem</h2>
+        <h2 className='mt-40'>lorem</h2>
+        <h2 className='mt-40'>lorem</h2>
         <h2 className='mt-40'>lorem</h2>
       </Layout>
     </div>

@@ -7,36 +7,68 @@ import ExpertiseCard from "./ExpertiseCard";
 gsap.registerPlugin(ScrollTrigger);
 
 const Expertises = () => {
+  const containerRef = useRef(null);
   const cardRefs = useRef([]);
-  const sectionRef = useRef(null);
 
   useEffect(() => {
     const cards = cardRefs.current.filter(Boolean);
     if (cards.length === 0) return;
 
-    // Each card pins and next card slides over it
-    cards.forEach((card, i) => {
-      // Pin each card
-      ScrollTrigger.create({
-        trigger: card,
-        start: "top top+=60",
-        end: () => `+=${(cards.length - i) * 100}%`,
-        pin: true,
-        pinSpacing: false,
-      });
+    // Random tilts: right, left, straight
+    const tilts = cards.map(() => gsap.utils.random(-10, 10));
 
-      // Scale down as next card covers it
+    // Set all cards except first hidden below
+    cards.forEach((card, i) => {
+      if (i > 0) {
+        gsap.set(card, { yPercent: 100 });
+      }
+    });
+
+    // Set perspective + origin BEFORE timeline
+cards.forEach((card) => {
+  gsap.set(card, {
+    transformPerspective: 1200,
+    transformOrigin: "50% 40%",
+  });
+});
+
+// Set all cards except first hidden below
+cards.forEach((card, i) => {
+  if (i > 0) {
+    gsap.set(card, { yPercent: 100 });
+  }
+});
+
+    // Single timeline pinned to container
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: `+=${cards.length * 600}`,
+        scrub: 0.8,
+        pin: true,
+      },
+    });
+
+    cards.forEach((card, i) => {
       if (i < cards.length - 1) {
-        gsap.to(card, {
-          scale: 0.95,
-          borderRadius: "2.5em",
-          scrollTrigger: {
-            trigger: cards[i + 1],
-            start: "top bottom",
-            end: "top top+=60",
-            scrub: true,
-          },
-        });
+        // Current card falls back with 3D tilt
+        tl.to(card, {
+          yPercent: 0,
+          rotateX: 45,
+          rotateZ: tilts[i],
+          scale: 0.75,
+          // transformPerspective: 1200,
+          // transformOrigin: "50% 10%",
+          ease: "power2.in",
+          duration: 1,
+        }, i)
+        // Next card slides up
+        .to(cards[i + 1], {
+          yPercent: 0,
+          ease: "power2.out",
+          duration: 1,
+        }, i + 0.1);
       }
     });
 
@@ -45,17 +77,18 @@ const Expertises = () => {
 
   return (
     <section
-      ref={sectionRef}
-      className="relative"
+      ref={containerRef}
+      className="relative h-screen overflow-hidden"
     >
       {expertises.map((item, index) => (
-        <a href="#">
-          <ExpertiseCard
-            key={item.id}
-            item={item}
-            cardRef={(el) => (cardRefs.current[index] = el)}
-          />
-        </a>
+        <div
+          key={item.id}
+          ref={(el) => (cardRefs.current[index] = el)}
+          className="absolute inset-0"
+          style={{ padding: "8vh 0" }}
+        >
+          <ExpertiseCard item={item} />
+        </div>
       ))}
     </section>
   );
