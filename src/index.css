@@ -34,7 +34,7 @@ html {
   color: #fff;        /* white */
 }
 
-/** EXPERTIES */
+/**a EXPERTIES */
 .experties-wrapper {
   @apply md:max-h-12.5! md:min-h-[85vh] lg:max-h-17.5!
 }
