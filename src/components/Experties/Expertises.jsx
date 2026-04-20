@@ -25,19 +25,19 @@ const Expertises = () => {
     });
 
     // Set perspective + origin BEFORE timeline
-cards.forEach((card) => {
-  gsap.set(card, {
-    transformPerspective: 1200,
-    transformOrigin: "50% 40%",
-  });
-});
+    cards.forEach((card) => {
+      gsap.set(card, {
+        transformPerspective: 1200,
+        transformOrigin: "50% 40%",
+      });
+    });
 
-// Set all cards except first hidden below
-cards.forEach((card, i) => {
-  if (i > 0) {
-    gsap.set(card, { yPercent: 100 });
-  }
-});
+    // Set all cards except first hidden below
+    cards.forEach((card, i) => {
+      if (i > 0) {
+        gsap.set(card, { yPercent: 100 });
+      }
+    });
 
     // Single timeline pinned to container
     const tl = gsap.timeline({
@@ -63,12 +63,12 @@ cards.forEach((card, i) => {
           ease: "power2.in",
           duration: 1,
         }, i)
-        // Next card slides up
-        .to(cards[i + 1], {
-          yPercent: 0,
-          ease: "power2.out",
-          duration: 1,
-        }, i + 0.1);
+          // Next card slides up
+          .to(cards[i + 1], {
+            yPercent: 0,
+            ease: "power2.out",
+            duration: 1,
+          }, i + 0.1);
       }
     });
 
@@ -77,6 +77,7 @@ cards.forEach((card, i) => {
 
   return (
     <section
+      id="experties"
       ref={containerRef}
       className="relative h-screen overflow-hidden"
     >

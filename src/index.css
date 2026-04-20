@@ -26,6 +26,7 @@ body {
 /* FIREFOX */
 html {
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 /* TEXT SELECTION STYLE */

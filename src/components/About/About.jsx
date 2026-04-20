@@ -87,7 +87,9 @@ const About = () => {
           lg:col-start-11 lg:row-start-2
           flex-col justify-end items-end
         ">
-          <button className="
+          <a
+          href="#experties"
+          className="
   group relative w-11 h-11
   rounded-[0.75em] border border-primary
   overflow-hidden
@@ -111,7 +113,7 @@ const About = () => {
                 <path d="M0.876668 14.4267L3.42629 11.852L11.1376 19.5634L11.1376 0.828689L14.8621 0.828689L14.8621 19.5634L22.5609 11.852L25.123 14.4267L12.9999 26.5498L0.876668 14.4267Z" />
               </svg>
             </div>
-          </button>
+          </a>
         </div>
 
       </div>

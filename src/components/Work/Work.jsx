@@ -45,7 +45,7 @@ const Work = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-bgPrimary pt-16 md:pt-20 pb-32 overflow-hidden"
+      className="bg-bgPrimary overflow-hidden"
     >
       {/* HEADER */}
       <div className="flex flex-col gap-4 mb-14 md:mb-8 max-w-2xl lg:pl-20 lg:max-w-120 xl:pl-25.5 xl:max-w-133 2xl:max-w-160">
