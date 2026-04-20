@@ -43,3 +43,7 @@ html {
 .btnWrapper {
   @apply xl:py-[0.3em]
 }
+
+.swiper-slide, .boxxx {
+  @apply w-32.5! lg:w-53.5! lg:h-53.5! lg:mr-3! xl:size-[255px]! 2xl:size-[305px]!
+}
