@@ -6,6 +6,7 @@ import About from './components/About/About';
 import Expertises from './components/Experties/Expertises';
 import Work from './components/Work/Work';
 import Brands from './components/Brands/Brands';
+import Footer from './components/Footer/Footer';
 import useLenis from './Hooks/useLenis';
 
 const App = () => {
@@ -16,13 +17,18 @@ const App = () => {
       <Layout>
         <Navbar />
       </Layout>
+
       <Hero />
+
       <Layout>
         <About />
         <Expertises />
         <Work />
       </Layout>
+
       <Brands />
+
+      <Footer/>
     </div>
   );
 };
