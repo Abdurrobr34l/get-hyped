@@ -1,21 +1,16 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 const WorkCard = ({ item }) => {
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    if (window.innerWidth < 768) {
-      videoRef.current?.play();
-    }
-  }, []);
   return (
     <a
       href={item.href}
       className="group relative block rounded-4xl p-1.5"
       style={{ backgroundColor: item.color }}
-      onMouseEnter={() => { if (window.innerWidth >= 768) videoRef.current?.play(); }}
+      onMouseEnter={() => videoRef.current?.play()}
       onMouseLeave={() => {
-        if (window.innerWidth >= 768 && videoRef.current) {
+        if (videoRef.current) {
           videoRef.current.pause();
           videoRef.current.currentTime = 0;
         }
@@ -42,7 +37,7 @@ const WorkCard = ({ item }) => {
         </div>
 
         {/* SVG SHAPE */}
-        <div className="absolute bottom-0 left-0 w-full p-2" style={{ height: '65%' }}>
+        <div className="absolute bottom-0 left-0 w-full p-3 aspect-2/2 md:aspect-3/3 xl:aspect-3/2.5">
           <svg
             viewBox="0 0 429 300"
             className="w-full h-full"
@@ -57,8 +52,8 @@ const WorkCard = ({ item }) => {
         </div>
 
         {/* CONTENT */}
-        <div className="absolute bottom-0 left-0 w-full p-4 z-10 text-white">
-          <h3 className="text-base font-bold leading-tight mb-3">
+        <div className="absolute bottom-2 left-2 w-full p-4 z-10 text-white xl:p-5 xl:w-[80%] 2xl:p-6 2xl:w-[65%]">
+          <h3 className="text-base font-bold leading-tight mb-2 xl:text-xl">
             {item.title}
           </h3>
           <span
@@ -70,12 +65,12 @@ const WorkCard = ({ item }) => {
         </div>
 
         {/* ARROW */}
-        <div className="absolute bottom-5 right-4 z-10 -rotate-128">
+        <div className="absolute bottom-35 right-4 z-10 -rotate-128 md:bottom-27 md:right-4 lg:bottom-33 xl:bottom-34 2xl:bottom-41">
           <button className="
-  group relative w-11 h-11
+  group relative w-9 h-9
   rounded-full bg-white
   overflow-hidden
-  flex items-center justify-center
+  flex items-center justify-center xl:w-10 xl:h-10 2xl:w-12 2xl:h-12
 ">
             <div className="
               flex flex-col gap-12
